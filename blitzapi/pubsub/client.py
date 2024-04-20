@@ -4,14 +4,14 @@ import paho.mqtt.client as mqtt
 
 class PubSubClient:
     def __init__(self, url, port):
-        self.client = mqtt.Client()
+        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.url = url
         self.port = port
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
 
-    def on_connect(self, client, userdata, flags, rc):
-        print(f"Connected with result code {rc}")
+    def on_connect(client, userdata, flags, reason_code, properties):
+        print(f"Connected with result code {reason_code}")
 
     def on_message(self, client, userdata, msg):
         print(f"Received message on {msg.topic}: {msg.payload.decode()}")
