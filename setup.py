@@ -7,10 +7,12 @@ setup(
     description='A simple Blitz API for pub/sub, scraping, and user management',
     author='James Hill',
     author_email='jameshill@example.com',
-    url='https://github.com/jameshill/BlitzApi',
+    url='https://github.com/JamesHill0/BlitzApi',
     install_requires=[
         # Add your package dependencies here
         'paho-mqtt',
         'requests',  # Assuming the scraper might need requests
     ],
 )
+
+
