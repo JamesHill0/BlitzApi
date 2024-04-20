@@ -2,7 +2,7 @@
 import paho.mqtt.client as mqtt
 
 class PubSubClient:
-    def __init__(self, url, port):
+    def __init__(self, url='localhost', port=1883):
         self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         self.url = url
         self.port = port
